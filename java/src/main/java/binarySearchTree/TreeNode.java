@@ -23,4 +23,28 @@ public class TreeNode {
                 rightChild = new TreeNode(value);
             else rightChild.insert(value);
     }
+
+    public void inOrderTraversal() {
+        if (leftChild != null)
+            leftChild.inOrderTraversal();
+        System.out.printf("%d , ", data);
+        if (rightChild != null)
+            rightChild.inOrderTraversal();
+    }
+
+    public void postOrderTraversal() {
+        if (leftChild != null)
+            leftChild.postOrderTraversal();
+        if (rightChild != null)
+            rightChild.postOrderTraversal();
+        System.out.printf("%d , ", data);
+    }
+
+    public void preOrderTraversal() {
+        System.out.printf("%d , ", data);
+        if (leftChild != null)
+            leftChild.preOrderTraversal();
+        if (rightChild != null)
+            rightChild.preOrderTraversal();
+    }
 }

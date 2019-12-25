@@ -9,4 +9,19 @@ public class Tree {
         else
             root.insert(value);
     }
+
+    public void inOrderTraversal() {
+        if (root != null)
+            root.inOrderTraversal();
+    }
+
+    public void postOrderTraversal() {
+        if (root != null)
+            root.postOrderTraversal();
+    }
+
+    public void preOrderTraversal() {
+        if (root != null)
+            root.preOrderTraversal();
+    }
 }
