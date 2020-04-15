@@ -1,4 +1,4 @@
-package main.sorting;
+package sorting;
 
 public class Commons {
 

@@ -1,6 +1,6 @@
-package main.sorting;
+package sorting;
 
-import static main.sorting.Commons.printArray;
+import static sorting.Commons.printArray;
 
 public class Insertion_Sort {
     public static void main(String[] args) {

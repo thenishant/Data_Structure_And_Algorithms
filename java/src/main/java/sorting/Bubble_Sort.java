@@ -1,7 +1,8 @@
-package main.sorting;
+package sorting;
 
-import static main.sorting.Commons.printArray;
-import static main.sorting.Commons.swap;
+
+import static sorting.Commons.printArray;
+import static sorting.Commons.swap;
 
 public class Bubble_Sort {
 
