@@ -1,8 +1,8 @@
-package dataStructures.linkedList;
+package dataStructures.linkedList.singly;
 
 public class Node {
-    int data;
-    Node next;
+    private int data;
+    private Node next;
 
     public Node(int data) {
         this.data = data;
@@ -24,7 +24,7 @@ public class Node {
         this.next = next;
     }
 
-    public String toString(){
+    public String toString() {
         return String.valueOf(data);
     }
 }
