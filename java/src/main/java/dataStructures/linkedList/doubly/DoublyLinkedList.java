@@ -1,10 +1,13 @@
 package dataStructures.linkedList.doubly;
 
+import javax.swing.plaf.IconUIResource;
+import java.sql.SQLOutput;
 import java.util.NoSuchElementException;
 
 public class DoublyLinkedList {
     private Node head;
     private Node tail;
+    private int size;
 
     public void printForwardList() {
         Node node = head;
@@ -37,6 +40,7 @@ public class DoublyLinkedList {
             head.setPrevious(node);
         node.setNext(head);
         head = node;
+        size++;
     }
 
     public void insertLast(int value) {
@@ -51,6 +55,8 @@ public class DoublyLinkedList {
         current.setNext(node);
         node.setPrevious(current);
         tail = node;
+        size++;
+
     }
 
     public void insertAtPosition(int position, int value) {
@@ -73,17 +79,30 @@ public class DoublyLinkedList {
         node.setPrevious(current);
         current.getNext().setPrevious(node);
         current.setNext(node);
+        size++;
+
+    }
+
+    public void addBefore(int newData, int existingData) {
+        Node node = new Node(newData);
+        Node current = head;
+        if (isEmpty() || current == tail) {
+            insertFirst(newData);
+            return;
+        }
+        while (current.getData() != existingData) {
+            current = current.getNext();
+        }
+        node.setNext(current);
+        node.setPrevious(current.getPrevious());
+        current.setPrevious(node);
+        current.getPrevious().setNext(node);
+        size++;
+
     }
 
     public int getLength() {
-        Node node = head;
-        int count = 0;
-        if (node == null) return count;
-        while (node != null) {
-            node = node.getNext();
-            count++;
-        }
-        return count;
+        return size;
     }
 
     public void deleteLast() {
@@ -97,6 +116,7 @@ public class DoublyLinkedList {
         }
         tail = current.getPrevious();
         current.setPrevious(null);
+        size--;
     }
 
     public void deleteFirst() {
@@ -107,7 +127,7 @@ public class DoublyLinkedList {
             current.getNext().setPrevious(null);
         head = current.getNext();
         current.setNext(null);
-
+        size--;
     }
 
 }

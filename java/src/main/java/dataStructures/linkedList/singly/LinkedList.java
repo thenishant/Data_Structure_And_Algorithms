@@ -98,4 +98,8 @@ public class LinkedList {
             node = node.getNext();
         }
     }
+
+    public void insertSorted(int value) {
+
+    }
 }
